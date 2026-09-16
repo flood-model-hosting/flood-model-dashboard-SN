@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const LOG_PATH = "/logs/workflow.log";
+const LOG_PATH = `${import.meta.env.BASE_URL}logs/workflow.log`;
 
 function fmt(n) {
   if (n == null || Number.isNaN(Number(n))) return "—";

@@ -1,207 +1,3 @@
-Sep 17 18:30:07 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
-Sep 17 18:33:24 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
-Sep 17 18:33:24 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
-Sep 17 18:33:24 cenvi510-storage systemd[1]: glofas-fetch.service: Consumed 1.390s CPU time.
-Sep 17 18:33:24 cenvi510-storage systemd[1]: Starting river-flood-process.service - Process GloFAS data for river flood workflow...
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | pipeline   | run_daily_monitoring:60      | run_daily_monitoring started — run='daily_flood_monitoring', issue_date=2026-09-17, basins=2, steps=[extract=True, forecast=True, save=True], log=/var/log/river-flood-workflow/2026/09/daily_flood_monitoring_20260917T183325.txt
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | extract    | extract:31                   | Processing basin 'cagayan'
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091700.nc
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091700.nc
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/cagayan_oep_curves_all_units.json (oep_min=100)
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 337 units with valid thresholds (from 338 total, oep_min=100)
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'cagayan': 337 -> 25 units (targets=1)
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='cagayan', issue_date=2026-09-17
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='cagayan', issue_date=2026-09-17, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
-Sep 17 18:33:25 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:25 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 1024 cells for basin 'cagayan'
-Sep 17 18:33:31 cenvi510-storage river-flood-process[18665]: /opt/river-flood-workflow/.venv/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'cfgrib' loading failed:
-Sep 17 18:33:31 cenvi510-storage river-flood-process[18665]: Cannot find the ecCodes library
-Sep 17 18:33:31 cenvi510-storage river-flood-process[18665]:   external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)
-Sep 17 18:33:32 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:32 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
-Sep 17 18:33:33 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:33 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:34 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:34 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:36 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:36 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:39 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:39 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 337 units, 5 lead days, 51 members
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 337 units
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 24 ADM3 units rolled up into parent ADM2 impact totals
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 337 cube units, 51 ensemble members
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 25 qualifying units
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 25 units (persist_days=2, min_lead=1)
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 25 units, 0 tier decisions fired, 1 units below oep_min=100
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='cagayan', 25 units evaluated
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | extract    | extract:31                   | Processing basin 'bicol'
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091700.nc
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091700.nc
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/bicol_oep_curves_all_units.json (oep_min=100)
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 138 units with valid thresholds (from 139 total, oep_min=100)
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'bicol': 138 -> 35 units (targets=1)
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='bicol', issue_date=2026-09-17
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='bicol', issue_date=2026-09-17, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
-Sep 17 18:33:42 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:42 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 137 cells for basin 'bicol'
-Sep 17 18:33:48 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:48 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
-Sep 17 18:33:49 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:49 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:50 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:50 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
-Sep 17 18:33:52 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:33:52 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 2/51 flood members, 2 qualifying patches
-Sep 17 18:34:08 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:08 | INFO     | forecast   | _compute_impacts_from_event_patches:590 | Computed impacts from 8/8 event patches: 2 members, 1 lead days, 7 units
-Sep 17 18:34:11 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:11 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 2/51 flood members, 3 qualifying patches
-Sep 17 18:34:30 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:30 | INFO     | forecast   | _compute_impacts_from_event_patches:590 | Computed impacts from 12/12 event patches: 2 members, 1 lead days, 8 units
-Sep 17 18:34:33 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:33 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 2/51 flood members, 3 qualifying patches
-Sep 17 18:34:52 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:52 | INFO     | forecast   | _compute_impacts_from_event_patches:590 | Computed impacts from 12/12 event patches: 2 members, 1 lead days, 8 units
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 139 units, 5 lead days, 51 members
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 139 units
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 34 ADM3 units rolled up into parent ADM2 impact totals
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 139 cube units, 51 ensemble members
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 35 qualifying units
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 35 units (persist_days=2, min_lead=1)
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 35 units, 0 tier decisions fired, 35 units below oep_min=100
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='bicol', 35 units evaluated
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | save       | save:37                      | Writing output: 2 basins, format=csv, dir=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | save       | _save_activation_decisions:222 | Activation file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17/activation_2026-09-17_20260917T103453Z.csv
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | save       | _save_operational_information:235 | Operational information file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17/operational_information_2026-09-17_20260917T103453Z.csv
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | save       | save:79                      | No activated tiers found; skipping decision summary file
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | save       | _prepare_trigger_decisions_for_plotting:282 | Skipping map plotting: no activated rows in CSV
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | save       | _save_maps:545               | Map files saved: 0 map(s) written to /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17/maps
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | pipeline   | run_daily_monitoring:127     | run_daily_monitoring complete — 2 basins, 0 tier fires, activation=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17/activation_2026-09-17_20260917T103453Z.csv, operational_information=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17/operational_information_2026-09-17_20260917T103453Z.csv
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18665]: 2026-09-17 18:34:53 | INFO     | cli        | main:80                      | Daily ETL complete: 2 basins, 60 units, 0 fired tier decisions. Output: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-17/operational_information_2026-09-17_20260917T103453Z.csv
-Sep 17 18:34:53 cenvi510-storage river-flood-process[18663]: No alert requested.
-Sep 17 18:34:53 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
-Sep 17 18:34:53 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
-Sep 17 18:34:53 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 1min 29.430s CPU time.
-Sep 18 18:30:07 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
-Sep 18 18:33:21 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
-Sep 18 18:33:21 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
-Sep 18 18:33:21 cenvi510-storage systemd[1]: glofas-fetch.service: Consumed 1.302s CPU time.
-Sep 18 18:33:21 cenvi510-storage systemd[1]: Starting river-flood-process.service - Process GloFAS data for river flood workflow...
-Sep 18 18:33:22 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:22 | INFO     | pipeline   | run_daily_monitoring:60      | run_daily_monitoring started — run='daily_flood_monitoring', issue_date=2026-09-18, basins=2, steps=[extract=True, forecast=True, save=True], log=/var/log/river-flood-workflow/2026/09/daily_flood_monitoring_20260918T183322.txt
-Sep 18 18:33:22 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:22 | INFO     | extract    | extract:31                   | Processing basin 'cagayan'
-Sep 18 18:33:22 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:22 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091800.nc
-Sep 18 18:33:22 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:22 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091800.nc
-Sep 18 18:33:22 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:22 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/cagayan_oep_curves_all_units.json (oep_min=100)
-Sep 18 18:33:22 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:22 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 337 units with valid thresholds (from 338 total, oep_min=100)
-Sep 18 18:33:23 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:23 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'cagayan': 337 -> 25 units (targets=1)
-Sep 18 18:33:23 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:23 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='cagayan', issue_date=2026-09-18
-Sep 18 18:33:23 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:23 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='cagayan', issue_date=2026-09-18, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
-Sep 18 18:33:23 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:23 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 1024 cells for basin 'cagayan'
-Sep 18 18:33:29 cenvi510-storage river-flood-process[27621]: /opt/river-flood-workflow/.venv/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'cfgrib' loading failed:
-Sep 18 18:33:29 cenvi510-storage river-flood-process[27621]: Cannot find the ecCodes library
-Sep 18 18:33:29 cenvi510-storage river-flood-process[27621]:   external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)
-Sep 18 18:33:29 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:29 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
-Sep 18 18:33:30 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:30 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:31 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:31 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:33 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:33 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:36 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:36 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 337 units, 5 lead days, 51 members
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 337 units
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 24 ADM3 units rolled up into parent ADM2 impact totals
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 337 cube units, 51 ensemble members
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 25 qualifying units
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 25 units (persist_days=2, min_lead=1)
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 25 units, 0 tier decisions fired, 1 units below oep_min=100
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='cagayan', 25 units evaluated
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | extract    | extract:31                   | Processing basin 'bicol'
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091800.nc
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091800.nc
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/bicol_oep_curves_all_units.json (oep_min=100)
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 138 units with valid thresholds (from 139 total, oep_min=100)
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'bicol': 138 -> 35 units (targets=1)
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='bicol', issue_date=2026-09-18
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='bicol', issue_date=2026-09-18, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
-Sep 18 18:33:39 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:39 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 137 cells for basin 'bicol'
-Sep 18 18:33:45 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:45 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
-Sep 18 18:33:46 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:46 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:47 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:47 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:49 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:49 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:51 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:51 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 138 units, 5 lead days, 51 members
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 138 units
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 34 ADM3 units rolled up into parent ADM2 impact totals
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 138 cube units, 51 ensemble members
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 35 qualifying units
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 35 units (persist_days=2, min_lead=1)
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 35 units, 0 tier decisions fired, 35 units below oep_min=100
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='bicol', 35 units evaluated
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | save       | save:37                      | Writing output: 2 basins, format=csv, dir=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | save       | _save_activation_decisions:222 | Activation file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18/activation_2026-09-18_20260918T103355Z.csv
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | save       | _save_operational_information:235 | Operational information file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18/operational_information_2026-09-18_20260918T103355Z.csv
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | save       | save:79                      | No activated tiers found; skipping decision summary file
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | save       | _prepare_trigger_decisions_for_plotting:282 | Skipping map plotting: no activated rows in CSV
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | save       | _save_maps:545               | Map files saved: 0 map(s) written to /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18/maps
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | pipeline   | run_daily_monitoring:127     | run_daily_monitoring complete — 2 basins, 0 tier fires, activation=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18/activation_2026-09-18_20260918T103355Z.csv, operational_information=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18/operational_information_2026-09-18_20260918T103355Z.csv
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27621]: 2026-09-18 18:33:55 | INFO     | cli        | main:80                      | Daily ETL complete: 2 basins, 60 units, 0 fired tier decisions. Output: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-18/operational_information_2026-09-18_20260918T103355Z.csv
-Sep 18 18:33:55 cenvi510-storage river-flood-process[27619]: No alert requested.
-Sep 18 18:33:55 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
-Sep 18 18:33:55 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
-Sep 18 18:33:55 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 34.355s CPU time.
-Sep 19 18:30:07 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
-Sep 19 18:34:08 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
-Sep 19 18:34:08 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
-Sep 19 18:34:08 cenvi510-storage systemd[1]: glofas-fetch.service: Consumed 1.339s CPU time.
-Sep 19 18:34:08 cenvi510-storage systemd[1]: Starting river-flood-process.service - Process GloFAS data for river flood workflow...
-Sep 19 18:34:09 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:09 | INFO     | pipeline   | run_daily_monitoring:60      | run_daily_monitoring started — run='daily_flood_monitoring', issue_date=2026-09-19, basins=2, steps=[extract=True, forecast=True, save=True], log=/var/log/river-flood-workflow/2026/09/daily_flood_monitoring_20260919T183409.txt
-Sep 19 18:34:09 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:09 | INFO     | extract    | extract:31                   | Processing basin 'cagayan'
-Sep 19 18:34:09 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:09 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091900.nc
-Sep 19 18:34:09 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:09 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091900.nc
-Sep 19 18:34:09 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:09 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/cagayan_oep_curves_all_units.json (oep_min=100)
-Sep 19 18:34:09 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:09 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 337 units with valid thresholds (from 338 total, oep_min=100)
-Sep 19 18:34:10 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:10 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'cagayan': 337 -> 25 units (targets=1)
-Sep 19 18:34:10 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:10 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='cagayan', issue_date=2026-09-19
-Sep 19 18:34:10 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:10 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='cagayan', issue_date=2026-09-19, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
-Sep 19 18:34:10 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:10 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 1024 cells for basin 'cagayan'
-Sep 19 18:34:16 cenvi510-storage river-flood-process[36124]: /opt/river-flood-workflow/.venv/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'cfgrib' loading failed:
-Sep 19 18:34:16 cenvi510-storage river-flood-process[36124]: Cannot find the ecCodes library
-Sep 19 18:34:16 cenvi510-storage river-flood-process[36124]:   external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)
-Sep 19 18:34:16 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:16 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
-Sep 19 18:34:17 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:17 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:18 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:18 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:20 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:20 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:23 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:23 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 337 units, 5 lead days, 51 members
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 337 units
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 24 ADM3 units rolled up into parent ADM2 impact totals
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 337 cube units, 51 ensemble members
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 25 qualifying units
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 25 units (persist_days=2, min_lead=1)
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 25 units, 0 tier decisions fired, 1 units below oep_min=100
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='cagayan', 25 units evaluated
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | extract    | extract:31                   | Processing basin 'bicol'
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091900.nc
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026091900.nc
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/bicol_oep_curves_all_units.json (oep_min=100)
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 138 units with valid thresholds (from 139 total, oep_min=100)
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'bicol': 138 -> 35 units (targets=1)
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='bicol', issue_date=2026-09-19
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='bicol', issue_date=2026-09-19, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
-Sep 19 18:34:26 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:26 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 137 cells for basin 'bicol'
-Sep 19 18:34:32 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:32 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
-Sep 19 18:34:33 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:33 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:34 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:34 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:36 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:36 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:39 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:39 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 138 units, 5 lead days, 51 members
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 138 units
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 34 ADM3 units rolled up into parent ADM2 impact totals
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 138 cube units, 51 ensemble members
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 35 qualifying units
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 35 units (persist_days=2, min_lead=1)
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 35 units, 0 tier decisions fired, 35 units below oep_min=100
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='bicol', 35 units evaluated
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | save       | save:37                      | Writing output: 2 basins, format=csv, dir=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | save       | _save_activation_decisions:222 | Activation file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19/activation_2026-09-19_20260919T103442Z.csv
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | save       | _save_operational_information:235 | Operational information file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19/operational_information_2026-09-19_20260919T103442Z.csv
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | save       | save:79                      | No activated tiers found; skipping decision summary file
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | save       | _prepare_trigger_decisions_for_plotting:282 | Skipping map plotting: no activated rows in CSV
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | save       | _save_maps:545               | Map files saved: 0 map(s) written to /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19/maps
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | pipeline   | run_daily_monitoring:127     | run_daily_monitoring complete — 2 basins, 0 tier fires, activation=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19/activation_2026-09-19_20260919T103442Z.csv, operational_information=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19/operational_information_2026-09-19_20260919T103442Z.csv
-Sep 19 18:34:42 cenvi510-storage river-flood-process[36124]: 2026-09-19 18:34:42 | INFO     | cli        | main:80                      | Daily ETL complete: 2 basins, 60 units, 0 fired tier decisions. Output: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-19/operational_information_2026-09-19_20260919T103442Z.csv
-Sep 19 18:34:43 cenvi510-storage river-flood-process[36122]: No alert requested.
-Sep 19 18:34:43 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
-Sep 19 18:34:43 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
-Sep 19 18:34:43 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 34.907s CPU time.
 Sep 20 18:30:07 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
 Sep 20 18:34:33 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
 Sep 20 18:34:33 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
@@ -471,3 +267,719 @@ Sep 23 22:21:52 cenvi510-storage river-flood-process[2704]: No alert requested.
 Sep 23 22:21:52 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
 Sep 23 22:21:52 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
 Sep 23 22:21:52 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 38.019s CPU time.
+Sep 24 18:30:32 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:30:38 cenvi510-storage glofas-fetch[10089]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:30:38 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:30:38 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:30:53 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 1.
+Sep 24 18:30:53 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:31:02 cenvi510-storage glofas-fetch[10108]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:31:03 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:31:03 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:31:18 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 2.
+Sep 24 18:31:18 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:31:24 cenvi510-storage glofas-fetch[10127]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:31:24 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:31:24 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:31:39 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 3.
+Sep 24 18:31:39 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:31:45 cenvi510-storage glofas-fetch[10143]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:31:46 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:31:46 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:32:01 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 4.
+Sep 24 18:32:01 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:32:07 cenvi510-storage glofas-fetch[10163]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:32:07 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:32:07 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:32:22 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 5.
+Sep 24 18:32:22 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:32:29 cenvi510-storage glofas-fetch[10178]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:32:29 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:32:29 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:32:44 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 6.
+Sep 24 18:32:44 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:32:54 cenvi510-storage glofas-fetch[10193]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:32:55 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:32:55 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:33:10 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 7.
+Sep 24 18:33:10 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:33:16 cenvi510-storage glofas-fetch[10213]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:33:16 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:33:16 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:33:32 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 8.
+Sep 24 18:33:32 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:33:39 cenvi510-storage glofas-fetch[10228]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:33:39 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:33:39 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:33:55 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 9.
+Sep 24 18:33:55 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:34:01 cenvi510-storage glofas-fetch[10243]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:34:02 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:34:02 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:34:17 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 10.
+Sep 24 18:34:17 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:34:23 cenvi510-storage glofas-fetch[10262]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:34:23 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:34:23 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:34:39 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 11.
+Sep 24 18:34:39 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:34:46 cenvi510-storage glofas-fetch[10277]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:34:46 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:34:46 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:35:01 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 12.
+Sep 24 18:35:01 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:35:08 cenvi510-storage glofas-fetch[10300]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:35:08 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:35:08 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:35:23 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 13.
+Sep 24 18:35:23 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:35:28 cenvi510-storage glofas-fetch[10315]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:35:29 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:35:29 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:35:44 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 14.
+Sep 24 18:35:44 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:35:49 cenvi510-storage glofas-fetch[10331]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:35:50 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:35:50 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:36:05 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 15.
+Sep 24 18:36:05 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:36:12 cenvi510-storage glofas-fetch[10351]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:36:12 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:36:12 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:36:27 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 16.
+Sep 24 18:36:27 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:36:34 cenvi510-storage glofas-fetch[10367]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:36:34 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:36:34 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:36:49 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 17.
+Sep 24 18:36:49 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:36:56 cenvi510-storage glofas-fetch[10382]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:36:56 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:36:56 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:37:11 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 18.
+Sep 24 18:37:11 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:37:17 cenvi510-storage glofas-fetch[10403]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:37:17 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:37:17 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:37:32 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 19.
+Sep 24 18:37:32 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:37:38 cenvi510-storage glofas-fetch[10418]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:37:39 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:37:39 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:37:54 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 20.
+Sep 24 18:37:54 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:37:59 cenvi510-storage glofas-fetch[10434]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:37:59 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:37:59 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:38:15 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 21.
+Sep 24 18:38:15 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:38:20 cenvi510-storage glofas-fetch[10453]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:38:20 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:38:20 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:38:35 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 22.
+Sep 24 18:38:35 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:38:41 cenvi510-storage glofas-fetch[10469]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:38:41 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:38:41 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:38:57 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 23.
+Sep 24 18:38:57 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:39:03 cenvi510-storage glofas-fetch[10485]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:39:04 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:39:04 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:39:19 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 24.
+Sep 24 18:39:19 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:39:25 cenvi510-storage glofas-fetch[10505]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:39:25 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:39:25 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:39:40 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 25.
+Sep 24 18:39:40 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:39:46 cenvi510-storage glofas-fetch[10522]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:39:46 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:39:46 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:40:02 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 26.
+Sep 24 18:40:02 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:40:07 cenvi510-storage glofas-fetch[10543]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:40:08 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:40:08 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:40:23 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 27.
+Sep 24 18:40:23 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:40:28 cenvi510-storage glofas-fetch[10558]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:40:28 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:40:28 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:40:43 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 28.
+Sep 24 18:40:43 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:40:50 cenvi510-storage glofas-fetch[10573]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:40:50 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:40:50 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:41:05 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 29.
+Sep 24 18:41:05 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:41:11 cenvi510-storage glofas-fetch[10593]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:41:11 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:41:11 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:41:26 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 30.
+Sep 24 18:41:26 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:41:34 cenvi510-storage glofas-fetch[10608]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:41:35 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:41:35 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:41:50 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 31.
+Sep 24 18:41:50 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:42:00 cenvi510-storage glofas-fetch[10625]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:42:01 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:42:01 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:42:16 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 32.
+Sep 24 18:42:16 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:42:21 cenvi510-storage glofas-fetch[10644]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:42:22 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:42:22 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:42:37 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 33.
+Sep 24 18:42:37 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:42:42 cenvi510-storage glofas-fetch[10659]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:42:42 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:42:42 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:42:58 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 34.
+Sep 24 18:42:58 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:43:03 cenvi510-storage glofas-fetch[10674]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:43:03 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:43:03 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:43:18 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 35.
+Sep 24 18:43:18 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:43:25 cenvi510-storage glofas-fetch[10694]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:43:26 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:43:26 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:43:41 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 36.
+Sep 24 18:43:41 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:43:46 cenvi510-storage glofas-fetch[10709]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:43:47 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:43:47 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:44:02 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 37.
+Sep 24 18:44:02 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:44:07 cenvi510-storage glofas-fetch[10728]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:44:07 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:44:07 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:44:23 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 38.
+Sep 24 18:44:23 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:44:28 cenvi510-storage glofas-fetch[10743]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:44:29 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:44:29 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:44:44 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 39.
+Sep 24 18:44:44 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:44:49 cenvi510-storage glofas-fetch[10759]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:44:49 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:44:49 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:45:04 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 40.
+Sep 24 18:45:04 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:45:09 cenvi510-storage glofas-fetch[10782]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:45:10 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:45:10 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:45:25 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 41.
+Sep 24 18:45:25 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:45:30 cenvi510-storage glofas-fetch[10797]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:45:30 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:45:30 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:45:46 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 42.
+Sep 24 18:45:46 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:45:52 cenvi510-storage glofas-fetch[10812]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:45:52 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:45:52 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:46:07 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 43.
+Sep 24 18:46:07 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:46:14 cenvi510-storage glofas-fetch[10833]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:46:14 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:46:14 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:46:29 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 44.
+Sep 24 18:46:29 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:46:35 cenvi510-storage glofas-fetch[10850]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:46:35 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:46:35 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:46:50 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 45.
+Sep 24 18:46:50 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:46:55 cenvi510-storage glofas-fetch[10865]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:46:56 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:46:56 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:47:11 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 46.
+Sep 24 18:47:11 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:47:16 cenvi510-storage glofas-fetch[10884]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:47:17 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:47:17 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:47:32 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 47.
+Sep 24 18:47:32 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:47:38 cenvi510-storage glofas-fetch[10899]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:47:39 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:47:39 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:47:54 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 48.
+Sep 24 18:47:54 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:48:00 cenvi510-storage glofas-fetch[10914]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:48:00 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:48:00 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:48:15 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 49.
+Sep 24 18:48:15 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:48:21 cenvi510-storage glofas-fetch[10939]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:48:22 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:48:22 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:48:37 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 50.
+Sep 24 18:48:37 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:48:42 cenvi510-storage glofas-fetch[10954]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:48:42 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:48:42 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:48:58 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 51.
+Sep 24 18:48:58 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:49:04 cenvi510-storage glofas-fetch[10969]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:49:04 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:49:04 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:49:19 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 52.
+Sep 24 18:49:19 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:49:25 cenvi510-storage glofas-fetch[10988]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:49:25 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:49:25 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:49:40 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 53.
+Sep 24 18:49:40 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:49:46 cenvi510-storage glofas-fetch[11003]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:49:46 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:49:46 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:50:01 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 54.
+Sep 24 18:50:01 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:50:07 cenvi510-storage glofas-fetch[11024]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:50:07 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:50:07 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:50:22 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 55.
+Sep 24 18:50:22 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:50:28 cenvi510-storage glofas-fetch[11040]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:50:29 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:50:29 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:50:44 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 56.
+Sep 24 18:50:44 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:50:50 cenvi510-storage glofas-fetch[11055]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:50:50 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:50:50 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:51:05 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 57.
+Sep 24 18:51:05 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:51:10 cenvi510-storage glofas-fetch[11074]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:51:11 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:51:11 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:51:26 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 58.
+Sep 24 18:51:26 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:51:32 cenvi510-storage glofas-fetch[11090]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:51:32 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:51:32 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:51:47 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 59.
+Sep 24 18:51:47 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:51:53 cenvi510-storage glofas-fetch[11111]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:51:53 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:51:53 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:52:08 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 60.
+Sep 24 18:52:08 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:52:14 cenvi510-storage glofas-fetch[11130]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:52:15 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:52:15 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:52:30 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 61.
+Sep 24 18:52:30 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:52:36 cenvi510-storage glofas-fetch[11145]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:52:36 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:52:36 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:52:51 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 62.
+Sep 24 18:52:51 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:52:56 cenvi510-storage glofas-fetch[11161]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:52:57 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:52:57 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:53:12 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 63.
+Sep 24 18:53:12 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:53:17 cenvi510-storage glofas-fetch[11181]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:53:18 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:53:18 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:53:33 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 64.
+Sep 24 18:53:33 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:53:38 cenvi510-storage glofas-fetch[11196]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:53:39 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:53:39 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:53:54 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 65.
+Sep 24 18:53:54 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:53:59 cenvi510-storage glofas-fetch[11211]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:53:59 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:53:59 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:54:14 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 66.
+Sep 24 18:54:14 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:54:20 cenvi510-storage glofas-fetch[11230]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:54:20 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:54:20 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:54:36 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 67.
+Sep 24 18:54:36 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:54:41 cenvi510-storage glofas-fetch[11245]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:54:41 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:54:41 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:54:56 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 68.
+Sep 24 18:54:56 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:55:02 cenvi510-storage glofas-fetch[11261]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:55:03 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:55:03 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:55:18 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 69.
+Sep 24 18:55:18 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:55:25 cenvi510-storage glofas-fetch[11283]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:55:25 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:55:25 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:55:40 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 70.
+Sep 24 18:55:40 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:55:45 cenvi510-storage glofas-fetch[11298]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:55:46 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:55:46 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:56:01 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 71.
+Sep 24 18:56:01 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:56:07 cenvi510-storage glofas-fetch[11317]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:56:08 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:56:08 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:56:23 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 72.
+Sep 24 18:56:23 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:56:28 cenvi510-storage glofas-fetch[11334]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:56:28 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:56:28 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:56:44 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 73.
+Sep 24 18:56:44 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:56:49 cenvi510-storage glofas-fetch[11350]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:56:49 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:56:49 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:57:05 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 74.
+Sep 24 18:57:05 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:57:10 cenvi510-storage glofas-fetch[11369]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:57:11 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:57:11 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:57:26 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 75.
+Sep 24 18:57:26 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:57:31 cenvi510-storage glofas-fetch[11386]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:57:31 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:57:31 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:57:47 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 76.
+Sep 24 18:57:47 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:57:53 cenvi510-storage glofas-fetch[11400]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:57:53 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:57:53 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:58:09 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 77.
+Sep 24 18:58:09 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:58:14 cenvi510-storage glofas-fetch[11420]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:58:15 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:58:15 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:58:30 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 78.
+Sep 24 18:58:30 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:58:36 cenvi510-storage glofas-fetch[11435]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:58:36 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:58:36 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:58:51 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 79.
+Sep 24 18:58:51 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:58:58 cenvi510-storage glofas-fetch[11450]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:58:58 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:58:58 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:59:13 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 80.
+Sep 24 18:59:13 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:59:19 cenvi510-storage glofas-fetch[11469]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:59:20 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:59:20 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:59:35 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 81.
+Sep 24 18:59:35 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 18:59:41 cenvi510-storage glofas-fetch[11484]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 18:59:41 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 18:59:41 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 18:59:56 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 82.
+Sep 24 18:59:56 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:00:04 cenvi510-storage glofas-fetch[11500]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:00:04 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:00:04 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:00:19 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 83.
+Sep 24 19:00:19 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:00:24 cenvi510-storage glofas-fetch[11521]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:00:25 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:00:25 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:00:40 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 84.
+Sep 24 19:00:40 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:00:45 cenvi510-storage glofas-fetch[11537]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:00:46 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:00:46 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:01:01 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 85.
+Sep 24 19:01:01 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:01:08 cenvi510-storage glofas-fetch[11557]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:01:09 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:01:09 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:01:24 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 86.
+Sep 24 19:01:24 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:01:29 cenvi510-storage glofas-fetch[11574]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:01:30 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:01:30 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:01:45 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 87.
+Sep 24 19:01:45 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:01:51 cenvi510-storage glofas-fetch[11589]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:01:51 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:01:51 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:02:07 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 88.
+Sep 24 19:02:07 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:02:16 cenvi510-storage glofas-fetch[11608]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:02:17 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:02:17 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:02:32 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 89.
+Sep 24 19:02:32 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:02:37 cenvi510-storage glofas-fetch[11623]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:02:38 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:02:38 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:02:53 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 90.
+Sep 24 19:02:53 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:02:58 cenvi510-storage glofas-fetch[11638]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:02:59 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:02:59 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:03:14 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 91.
+Sep 24 19:03:14 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:03:19 cenvi510-storage glofas-fetch[11657]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:03:20 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:03:20 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:03:35 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 92.
+Sep 24 19:03:35 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:03:40 cenvi510-storage glofas-fetch[11673]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:03:41 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:03:41 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:03:56 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 93.
+Sep 24 19:03:56 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:04:02 cenvi510-storage glofas-fetch[11689]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:04:03 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:04:03 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:04:18 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 94.
+Sep 24 19:04:18 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:04:23 cenvi510-storage glofas-fetch[11708]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:04:23 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:04:23 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:04:39 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 95.
+Sep 24 19:04:39 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:04:44 cenvi510-storage glofas-fetch[11724]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:04:45 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:04:45 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:05:00 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 96.
+Sep 24 19:05:00 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:05:05 cenvi510-storage glofas-fetch[11749]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:05:05 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:05:05 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:05:21 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 97.
+Sep 24 19:05:21 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:05:26 cenvi510-storage glofas-fetch[11768]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:05:27 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:05:27 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:05:42 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 98.
+Sep 24 19:05:42 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:05:47 cenvi510-storage glofas-fetch[11783]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:05:47 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:05:47 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:06:02 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 99.
+Sep 24 19:06:02 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:06:11 cenvi510-storage glofas-fetch[11803]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:06:11 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:06:11 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:06:26 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 100.
+Sep 24 19:06:26 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:06:33 cenvi510-storage glofas-fetch[11820]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:06:33 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:06:33 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:06:48 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 101.
+Sep 24 19:06:48 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:06:57 cenvi510-storage glofas-fetch[11837]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:06:57 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:06:57 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:07:12 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 102.
+Sep 24 19:07:12 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:07:18 cenvi510-storage glofas-fetch[11856]: get: Access failed: 550 glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc: No such file or directory
+Sep 24 19:07:18 cenvi510-storage systemd[1]: glofas-fetch.service: Main process exited, code=exited, status=1/FAILURE
+Sep 24 19:07:18 cenvi510-storage systemd[1]: glofas-fetch.service: Failed with result 'exit-code'.
+Sep 24 19:07:34 cenvi510-storage systemd[1]: glofas-fetch.service: Scheduled restart job, restart counter is at 103.
+Sep 24 19:07:34 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 24 19:11:07 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
+Sep 24 19:11:07 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
+Sep 24 19:11:07 cenvi510-storage systemd[1]: glofas-fetch.service: Consumed 1.258s CPU time.
+Sep 24 19:11:07 cenvi510-storage systemd[1]: Starting river-flood-process.service - Process GloFAS data for river flood workflow...
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | pipeline   | run_daily_monitoring:60      | run_daily_monitoring started — run='daily_flood_monitoring', issue_date=2026-09-24, basins=2, steps=[extract=True, forecast=True, save=True], log=/var/log/river-flood-workflow/2026/09/daily_flood_monitoring_20260924T191108.txt
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | extract    | extract:31                   | Processing basin 'cagayan'
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/cagayan_oep_curves_all_units.json (oep_min=100)
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 337 units with valid thresholds (from 338 total, oep_min=100)
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'cagayan': 337 -> 25 units (targets=1)
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='cagayan', issue_date=2026-09-24
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='cagayan', issue_date=2026-09-24, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
+Sep 24 19:11:08 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:08 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 1024 cells for basin 'cagayan'
+Sep 24 19:11:14 cenvi510-storage river-flood-process[11898]: /opt/river-flood-workflow/.venv/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'cfgrib' loading failed:
+Sep 24 19:11:14 cenvi510-storage river-flood-process[11898]: Cannot find the ecCodes library
+Sep 24 19:11:14 cenvi510-storage river-flood-process[11898]:   external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)
+Sep 24 19:11:15 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:15 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
+Sep 24 19:11:16 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:16 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:17 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:17 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:19 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:19 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:21 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:21 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 337 units, 5 lead days, 51 members
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 337 units
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 24 ADM3 units rolled up into parent ADM2 impact totals
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 337 cube units, 51 ensemble members
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 25 qualifying units
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 25 units (persist_days=2, min_lead=1)
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 25 units, 0 tier decisions fired, 1 units below oep_min=100
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='cagayan', 25 units evaluated
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | extract    | extract:31                   | Processing basin 'bicol'
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092400.nc
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/bicol_oep_curves_all_units.json (oep_min=100)
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 138 units with valid thresholds (from 139 total, oep_min=100)
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'bicol': 138 -> 35 units (targets=1)
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='bicol', issue_date=2026-09-24
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='bicol', issue_date=2026-09-24, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
+Sep 24 19:11:24 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:24 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 137 cells for basin 'bicol'
+Sep 24 19:11:30 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:30 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
+Sep 24 19:11:31 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:31 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:32 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:32 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:34 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:34 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:36 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:36 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 138 units, 5 lead days, 51 members
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 138 units
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 34 ADM3 units rolled up into parent ADM2 impact totals
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 138 cube units, 51 ensemble members
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 35 qualifying units
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 35 units (persist_days=2, min_lead=1)
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 35 units, 0 tier decisions fired, 35 units below oep_min=100
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='bicol', 35 units evaluated
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | save       | save:37                      | Writing output: 2 basins, format=csv, dir=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | save       | _save_activation_decisions:222 | Activation file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24/activation_2026-09-24_20260924T111139Z.csv
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | save       | _save_operational_information:235 | Operational information file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24/operational_information_2026-09-24_20260924T111139Z.csv
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | save       | save:79                      | No activated tiers found; skipping decision summary file
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | save       | _prepare_trigger_decisions_for_plotting:282 | Skipping map plotting: no activated rows in CSV
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | save       | _save_maps:545               | Map files saved: 0 map(s) written to /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24/maps
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | pipeline   | run_daily_monitoring:127     | run_daily_monitoring complete — 2 basins, 0 tier fires, activation=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24/activation_2026-09-24_20260924T111139Z.csv, operational_information=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24/operational_information_2026-09-24_20260924T111139Z.csv
+Sep 24 19:11:39 cenvi510-storage river-flood-process[11898]: 2026-09-24 19:11:39 | INFO     | cli        | main:80                      | Daily ETL complete: 2 basins, 60 units, 0 fired tier decisions. Output: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-24/operational_information_2026-09-24_20260924T111139Z.csv
+Sep 24 19:11:40 cenvi510-storage river-flood-process[11896]: No alert requested.
+Sep 24 19:11:40 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
+Sep 24 19:11:40 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
+Sep 24 19:11:40 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 33.278s CPU time.
+Sep 25 18:30:32 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 25 19:25:26 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
+Sep 25 19:25:26 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
+Sep 25 19:25:26 cenvi510-storage systemd[1]: glofas-fetch.service: Consumed 5.761s CPU time.
+Sep 25 19:25:26 cenvi510-storage systemd[1]: Starting river-flood-process.service - Process GloFAS data for river flood workflow...
+Sep 25 19:25:27 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:27 | INFO     | pipeline   | run_daily_monitoring:60      | run_daily_monitoring started — run='daily_flood_monitoring', issue_date=2026-09-25, basins=2, steps=[extract=True, forecast=True, save=True], log=/var/log/river-flood-workflow/2026/09/daily_flood_monitoring_20260925T192527.txt
+Sep 25 19:25:27 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:27 | INFO     | extract    | extract:31                   | Processing basin 'cagayan'
+Sep 25 19:25:27 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:27 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092500.nc
+Sep 25 19:25:27 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:27 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092500.nc
+Sep 25 19:25:27 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:27 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/cagayan_oep_curves_all_units.json (oep_min=100)
+Sep 25 19:25:27 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:27 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 337 units with valid thresholds (from 338 total, oep_min=100)
+Sep 25 19:25:28 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:28 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'cagayan': 337 -> 25 units (targets=1)
+Sep 25 19:25:28 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:28 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='cagayan', issue_date=2026-09-25
+Sep 25 19:25:28 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:28 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='cagayan', issue_date=2026-09-25, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
+Sep 25 19:25:28 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:28 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 1024 cells for basin 'cagayan'
+Sep 25 19:25:34 cenvi510-storage river-flood-process[27233]: /opt/river-flood-workflow/.venv/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'cfgrib' loading failed:
+Sep 25 19:25:34 cenvi510-storage river-flood-process[27233]: Cannot find the ecCodes library
+Sep 25 19:25:34 cenvi510-storage river-flood-process[27233]:   external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)
+Sep 25 19:25:35 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:35 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
+Sep 25 19:25:36 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:36 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:37 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:37 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:39 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:39 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:42 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:42 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 337 units, 5 lead days, 51 members
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 337 units
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 24 ADM3 units rolled up into parent ADM2 impact totals
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 337 cube units, 51 ensemble members
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 25 qualifying units
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 25 units (persist_days=2, min_lead=1)
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 25 units, 0 tier decisions fired, 1 units below oep_min=100
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='cagayan', 25 units evaluated
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | extract    | extract:31                   | Processing basin 'bicol'
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092500.nc
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092500.nc
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/bicol_oep_curves_all_units.json (oep_min=100)
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 138 units with valid thresholds (from 139 total, oep_min=100)
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'bicol': 138 -> 35 units (targets=1)
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='bicol', issue_date=2026-09-25
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='bicol', issue_date=2026-09-25, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
+Sep 25 19:25:45 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:45 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 137 cells for basin 'bicol'
+Sep 25 19:25:51 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:51 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
+Sep 25 19:25:51 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:51 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:53 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:53 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:54 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:54 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:25:57 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:25:57 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 138 units, 5 lead days, 51 members
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 138 units
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 34 ADM3 units rolled up into parent ADM2 impact totals
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 138 cube units, 51 ensemble members
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 35 qualifying units
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 35 units (persist_days=2, min_lead=1)
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 35 units, 0 tier decisions fired, 35 units below oep_min=100
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='bicol', 35 units evaluated
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | save       | save:37                      | Writing output: 2 basins, format=csv, dir=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | save       | _save_activation_decisions:222 | Activation file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25/activation_2026-09-25_20260925T112600Z.csv
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | save       | _save_operational_information:235 | Operational information file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25/operational_information_2026-09-25_20260925T112600Z.csv
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | save       | save:79                      | No activated tiers found; skipping decision summary file
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | save       | _prepare_trigger_decisions_for_plotting:282 | Skipping map plotting: no activated rows in CSV
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | save       | _save_maps:545               | Map files saved: 0 map(s) written to /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25/maps
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | pipeline   | run_daily_monitoring:127     | run_daily_monitoring complete — 2 basins, 0 tier fires, activation=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25/activation_2026-09-25_20260925T112600Z.csv, operational_information=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25/operational_information_2026-09-25_20260925T112600Z.csv
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27233]: 2026-09-25 19:26:00 | INFO     | cli        | main:80                      | Daily ETL complete: 2 basins, 60 units, 0 fired tier decisions. Output: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-25/operational_information_2026-09-25_20260925T112600Z.csv
+Sep 25 19:26:00 cenvi510-storage river-flood-process[27231]: No alert requested.
+Sep 25 19:26:00 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
+Sep 25 19:26:00 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
+Sep 25 19:26:00 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 33.301s CPU time.
+Sep 26 18:30:02 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
+Sep 26 19:03:44 cenvi510-storage systemd[1]: glofas-fetch.service: Deactivated successfully.
+Sep 26 19:03:44 cenvi510-storage systemd[1]: Finished glofas-fetch.service - Fetch GloFAS via lftp.
+Sep 26 19:03:44 cenvi510-storage systemd[1]: glofas-fetch.service: Consumed 5.194s CPU time.
+Sep 26 19:03:44 cenvi510-storage systemd[1]: Starting river-flood-process.service - Process GloFAS data for river flood workflow...
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | pipeline   | run_daily_monitoring:60      | run_daily_monitoring started — run='daily_flood_monitoring', issue_date=2026-09-26, basins=2, steps=[extract=True, forecast=True, save=True], log=/var/log/river-flood-workflow/2026/09/daily_flood_monitoring_20260926T190345.txt
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | extract    | extract:31                   | Processing basin 'cagayan'
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092600.nc
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092600.nc
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/cagayan_oep_curves_all_units.json (oep_min=100)
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 337 units with valid thresholds (from 338 total, oep_min=100)
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'cagayan': 337 -> 25 units (targets=1)
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='cagayan', issue_date=2026-09-26
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='cagayan', issue_date=2026-09-26, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
+Sep 26 19:03:45 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:45 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 1024 cells for basin 'cagayan'
+Sep 26 19:03:51 cenvi510-storage river-flood-process[35684]: /opt/river-flood-workflow/.venv/lib/python3.11/site-packages/xarray/backends/plugins.py:109: RuntimeWarning: Engine 'cfgrib' loading failed:
+Sep 26 19:03:51 cenvi510-storage river-flood-process[35684]: Cannot find the ecCodes library
+Sep 26 19:03:51 cenvi510-storage river-flood-process[35684]:   external_backend_entrypoints = backends_dict_from_pkg(entrypoints_unique)
+Sep 26 19:03:51 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:51 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
+Sep 26 19:03:52 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:52 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:03:53 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:53 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:03:55 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:55 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:03:58 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:03:58 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 337 units, 5 lead days, 51 members
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 337 units
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 24 ADM3 units rolled up into parent ADM2 impact totals
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 337 cube units, 51 ensemble members
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 25 qualifying units
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 25 units (persist_days=2, min_lead=1)
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 25 units, 0 tier decisions fired, 1 units below oep_min=100
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='cagayan', 25 units evaluated
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | extract    | extract:31                   | Processing basin 'bicol'
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | extract    | _resolve_forecast_path:109   | Checking forecast file: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092600.nc
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | extract    | _resolve_forecast_path:111   | Forecast file found: /usr/var/cache/glofas/glofas_areagrid_for_Phillippines_in_Phillippines_2026092600.nc
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | extract    | _load_oep_thresholds:130     | Loading OEP thresholds from /opt/river-flood-workflow/config/risk_profiles/bicol_oep_curves_all_units.json (oep_min=100)
+Sep 26 19:04:00 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:00 | INFO     | extract    | _load_oep_thresholds:168     | OEP thresholds loaded: 138 units with valid thresholds (from 139 total, oep_min=100)
+Sep 26 19:04:01 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:01 | INFO     | extract    | _filter_units_by_target_adm2:243 | Target ADM2 filtering complete for basin 'bicol': 138 -> 35 units (targets=1)
+Sep 26 19:04:01 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:01 | INFO     | forecast   | forecast:59                  | Starting evaluation — basin='bicol', issue_date=2026-09-26
+Sep 26 19:04:01 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:01 | INFO     | forecast   | detect_flood_events:1318     | Detect phase (detect_flood_events) — basin='bicol', issue_date=2026-09-26, leads=[1, 2, 3, 4, 5], t0_years=2.0, a_min_km2=100
+Sep 26 19:04:01 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:01 | INFO     | forecast   | detect_flood_events:1357     | EVT1 params loaded: 137 cells for basin 'bicol'
+Sep 26 19:04:06 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:06 | INFO     | forecast   | _open_forecast_source:891    | Forecast source opened: 1 files, time_dim='time', member_dim='member', indexed_members=51
+Sep 26 19:04:07 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:07 | INFO     | forecast   | detect_flood_events:1455     | Lead  1d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:08 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:08 | INFO     | forecast   | detect_flood_events:1455     | Lead  2d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:10 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:10 | INFO     | forecast   | detect_flood_events:1455     | Lead  3d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:12 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:12 | INFO     | forecast   | detect_flood_events:1455     | Lead  4d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | detect_flood_events:1455     | Lead  5d: 0/51 flood members, 0 qualifying patches
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | detect_flood_events:1537     | Detect phase complete — 138 units, 5 lead days, 51 members
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | forecast:77                  | Detection mode complete — impact cube has 138 units
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | _aggregate_adm3_impacts_to_adm2:181 | ADM2 aggregation complete: 34 ADM3 units rolled up into parent ADM2 impact totals
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | _compute_prob_exceed:1562    | Computing exceedance probabilities: 138 cube units, 51 ensemble members
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | _compute_prob_exceed:1581    | Exceedance probabilities computed for 35 qualifying units
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | _apply_tier_rules:210        | Applying 3 tier rules to 35 units (persist_days=2, min_lead=1)
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | _apply_tier_rules:305        | Tier evaluation complete: 35 units, 0 tier decisions fired, 35 units below oep_min=100
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | forecast   | forecast:96                  | Evaluation complete — basin='bicol', 35 units evaluated
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | save       | save:37                      | Writing output: 2 basins, format=csv, dir=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | save       | _save_activation_decisions:222 | Activation file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26/activation_2026-09-26_20260926T110415Z.csv
+Sep 26 19:04:15 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | save       | _save_operational_information:235 | Operational information file written: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26/operational_information_2026-09-26_20260926T110415Z.csv
+Sep 26 19:04:16 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:15 | INFO     | save       | save:79                      | No activated tiers found; skipping decision summary file
+Sep 26 19:04:16 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:16 | INFO     | save       | _prepare_trigger_decisions_for_plotting:282 | Skipping map plotting: no activated rows in CSV
+Sep 26 19:04:16 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:16 | INFO     | save       | _save_maps:545               | Map files saved: 0 map(s) written to /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26/maps
+Sep 26 19:04:16 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:16 | INFO     | pipeline   | run_daily_monitoring:127     | run_daily_monitoring complete — 2 basins, 0 tier fires, activation=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26/activation_2026-09-26_20260926T110415Z.csv, operational_information=/opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26/operational_information_2026-09-26_20260926T110415Z.csv
+Sep 26 19:04:16 cenvi510-storage river-flood-process[35684]: 2026-09-26 19:04:16 | INFO     | cli        | main:80                      | Daily ETL complete: 2 basins, 60 units, 0 fired tier decisions. Output: /opt/river-flood-workflow/data/gold/trigger_decisions/2026-09-26/operational_information_2026-09-26_20260926T110415Z.csv
+Sep 26 19:04:16 cenvi510-storage river-flood-process[35682]: No alert requested.
+Sep 26 19:04:16 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
+Sep 26 19:04:16 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
+Sep 26 19:04:16 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 32.760s CPU time.

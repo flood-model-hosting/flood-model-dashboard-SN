@@ -467,3 +467,4 @@ Oct 01 18:34:36 cenvi510-storage river-flood-process[82166]: No alert requested.
 Oct 01 18:34:36 cenvi510-storage systemd[1]: river-flood-process.service: Deactivated successfully.
 Oct 01 18:34:36 cenvi510-storage systemd[1]: Finished river-flood-process.service - Process GloFAS data for river flood workflow.
 Oct 01 18:34:36 cenvi510-storage systemd[1]: river-flood-process.service: Consumed 33.269s CPU time.
+Oct 02 18:30:02 cenvi510-storage systemd[1]: Starting glofas-fetch.service - Fetch GloFAS via lftp...
